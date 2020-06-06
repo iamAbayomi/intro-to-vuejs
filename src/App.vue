@@ -58,7 +58,7 @@
               method : 'DELETE'
             });
 
-            this.employee = this.employees.filter( employee => employee.id );
+            this.employee = this.employees.filter( employee => employee.id !== id );
 
          }catch(error){
            console.error(error)
