@@ -42,19 +42,30 @@
             this.employees = [ ...this.employees, newEmployee ];
        },
 
-      deleteEmployee(id){
-        this.employees = this.employees.filter(
-          employee => employee.id !== id
-        )
+        deleteEmployee(id){
+          this.employees = this.employees.filter(
+            employee => employee.id !== id
+          )
         },
 
-      editEmployee( id, updatedEmployee){
-        this.employee = this.employee.map(employee=>
-            employee.id === id ? updatedEmployee : employee
-        )
+        editEmployee( id, updatedEmployee){
+          this.employee = this.employee.map(employee=>
+              employee.id === id ? updatedEmployee : employee
+          )
+        },
 
-      }  
+        async getEmployees(){
+          try{
+              const response =await 
+              fetch('https://jsonplaceholder.typicode.com/users')
+                const data = await response.json()
+                this.employees = data
+          }catch(error){
+              console.error(error)
+          }
 
+        }
+  
      }
   }
 </script>
